@@ -44,7 +44,7 @@ description: 5
 	<li>Add a dependency package to the <strong>dependencies</strong> section in the <strong>build.gradle</strong> file.<pre><div id="copy-button4" class="copy-btn" title="Copy" onclick="copyCode(this.id)"></div><code><span class="pln">dependencies </span><span class="pun">{</span><span class="pln">
 		</span><span class="pun">...</span><span class="pln">
     </span><span class="str">            //Video Kit</span><span class="pln">
-		implementation </span><span class="str">'com.huawei.hms:videokit-player:1.0.1.300'</span><span class="pln">
+		implementation </span><span class="str">'com.huawei.hms:audiokit-player:1.1.0.300'</span><span class="pln">
 		</span><span class="pun">...</span><span class="pln">
 	</span><span class="pun">}</span><span class="pln">
 	</span></code></pre>
@@ -87,8 +87,10 @@ description: 5
 <pre><div id="copy-button9" class="copy-btn" title="Copy" onclick="copyCode(this.id)"></div><code><span class="tag">&lt;uses-permission</span><span class="pln"> </span><span class="atn">android:name</span><span class="pun">=</span><span class="atv">"android.permission.INTERNET"</span><span class="tag">/&gt;</span><span class="pln">
 </span><span class="tag">&lt;uses-permission</span><span class="pln"> </span><span class="atn">android:name</span><span class="pun">=</span><span class="atv">"android.permission.ACCESS_NETWORK_STATE"</span><span class="tag">/&gt;</span><span class="pln">
 </span><span class="tag">&lt;uses-permission</span><span class="pln"> </span><span class="atn">android:name</span><span class="pun">=</span><span class="atv">"android.permission.ACCESS_WIFI_STATE"</span><span class="tag">/&gt;</span><span class="pln">
-</span><span class="tag">&lt;uses-permission</span><span class="pln"> </span><span class="atn">android:name</span><span class="pun">=</span><span class="atv">"com.huawei.permission.SECURITY_DIAGNOSE"</span><span class="tag">/&gt;</span><span class="pln">
+</span><span class="tag">&lt;uses-permission</span><span class="pln"> </span><span class="atn">android:name</span><span class="pun">=</span><span class="atv">"android.permission.READ_EXTERNAL_STORAGE"</span><span class="tag">/&gt;</span><span class="pln">
 </span><span class="tag">&lt;uses-permission</span><span class="pln"> </span><span class="atn">android:name</span><span class="pun">=</span><span class="atv">"android.permission.WRITE_EXTERNAL_STORAGE"</span><span class="tag">/&gt;</span><span class="pln">
+</span><span class="tag">&lt;uses-permission</span><span class="pln"> </span><span class="atn">android:name</span><span class="pun">=</span><span class="atv">"android.permission.READ_MEDIA_STORAGE"</span><span class="tag">/&gt;</span><span class="pln">
+</span><span class="tag">&lt;uses-permission</span><span class="pln"> </span><span class="atn">android:name</span><span class="pun">=</span><span class="atv">"android.permission.FOREGROUND_SERVICE"</span><span class="tag">/&gt;</span><span class="pln">
 </span><span class="tag">&lt;uses-permission</span><span class="pln"> </span><span class="atn">android:name</span><span class="pun">=</span><span class="atv">"android.permission.WAKE_LOCK"</span><span class="tag">/&gt;</span><span class="pln">
   </span></code></pre>
 <p><strong>Step 4</strong>: In the Android Studio window, choose <strong>File</strong> &gt; <strong>Sync Project with Gradle Files</strong> to synchronize the project.</p>
