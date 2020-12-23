@@ -9,7 +9,7 @@
  
 ## Introduction
     HMS Audio Kit Codelab code encapsulates APIs of the HUAWEI Audio Kit SDK. It provides many sample programs for your reference or usage.
-    Before you use this codelab, it's assumed that you already have a HUAWEI developer account and have already created an app to implement the HMS Video Kit. If you haven't, please refer to https://developer.huawei.com/consumer/en/doc/start/introduction-0000001053446472 and https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-introduction.
+    Before you use this codelab, it's assumed that you already have a HUAWEI developer account and have already created an app to implement the HMS Audio Kit. If you haven't, please refer to https://developer.huawei.com/consumer/en/doc/start/introduction-0000001053446472 and https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-introduction.
     
     Adapters:           The package which contains the adapters for RecyclerViews scattered throughout the app.
     UtilsAndServices:   The package which contains the necessary utils and services to provide smooth user experience.
@@ -29,7 +29,7 @@
 ## Configuration 
     1. Register and sign in to HUAWEI Developers.
     2. Create a project and then create an app in the project, enter the project package name.
-    3. Go to Project Settings > Manage APIs, find the Video Kit API, and enable it.
+    3. Go to Project Settings > Manage APIs, find the Audio Kit API, and enable it.
     4. Go to Project Settings > General information, click Set next to Data storage location under Project information, and select a data storage location in the displayed dialog box.
     5. Download the agconnect-services.json file and place it to the app's root directory of the project.
     6. Add the Maven repository address maven {url 'https://developer.huawei.com/repo/'} and plug-in class path 'com.huawei.agconnect:agcp:1.4.1.300' to the project-level build.gradle file.
@@ -55,7 +55,7 @@
     You can preset online audio. Audio files that will be selected can be configured in the code.
     Code location src/main/java/com.hms.codelab.audiokit.musicplayerwithaudiokit.UtilsAndServices/PlaylistCreator.kt
     
-    5) Using Other Video Kit Features
+    5) Using Other Audio Kit Features
     Many features of the Audio Kit can be experienced throughout the sample app. Basic and advanced playback exists in music play screen.
     Code location src/main/java/com.hms.codelab.audiokit.musicplayerwithaudiokit/AudioActivity.kt
     
