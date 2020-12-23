@@ -24,8 +24,6 @@ description: 1
 	<li>Playing the audio in the app</li>
 	<li>Using powerful Audio Kit playback features</li>
   <li>Updating SeekBar</li>
-  <li>Managing playlists</li>
-  <li>Implement real-time updated notification bar</li>
 </ul>
 <h2 class="checklist">
 	<strong>What You Will Learn</strong>
@@ -36,4 +34,5 @@ description: 1
 <ul class="checklist">
 	<li>Initialize audio managers and use them effectively</li>
 	<li>Integrate and use the abilities of Audio Kit SDK</li>
+  <li>Tweak visuals to have a nice music player UI</li>
 </ul>
