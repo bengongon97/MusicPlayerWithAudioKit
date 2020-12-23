@@ -7,7 +7,6 @@
  * [Sample Code](#Sample-Code)
  * [License](#license)
  
- 
 ## Introduction
     HMS Audio Kit Codelab code encapsulates APIs of the HUAWEI Audio Kit SDK. It provides many sample programs for your reference or usage.
     Before you use this codelab, it's assumed that you already have a HUAWEI developer account and have already created an app to implement the HMS Video Kit. If you haven't, please refer to https://developer.huawei.com/consumer/en/doc/start/introduction-0000001053446472 and https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-introduction.
@@ -24,9 +23,9 @@
 	•	Android Studio 3.x or later version
 	•	Java JDK 1.7 or later version
 	•	EMUI 4.0 or later version
-  •	SDK Platform 19 or later
+	•	SDK Platform 19 or later
 	•	HMS Core (APK) 5.0.0.300 or later version
-
+  
 ## Configuration 
     1. Register and sign in to HUAWEI Developers.
     2. Create a project and then create an app in the project, enter the project package name.
@@ -37,10 +36,9 @@
     7. Add apply plugin: 'com.huawei.agconnect' to the last line of the app-level build.gradle file.
     8. Configure the dependency com.huawei.hms:audiokit-player:1.1.0.300 in the app-level buildle.gradle file.
     9. Synchronize the project.
-	
+    
 ## Sample Code
     HMS Audio Kit Codelab code contains many functions to implement many features. Following is a summary of some crucial methods.
-
     1) Initiliaze HwAudioManager instance.
     You can initialize HwAudioManager and other sub-managers in AsyncTask method.
     Code location src/main/java/com.hms.codelab.audiokit.musicplayerwithaudiokit/AudioActivity.kt
@@ -65,5 +63,5 @@
     Audio playback can be controlled from notification bar in real time.
     Code location src/main/java/com.hms.codelab.audiokit.musicplayerwithaudiokit/AudioActivity.kt
 
-##  License
+## License
     HMS Audio Kit Codelab is licensed under the [Apache License, version 2.0](http://www.apache.org/licenses/LICENSE-2.0).
