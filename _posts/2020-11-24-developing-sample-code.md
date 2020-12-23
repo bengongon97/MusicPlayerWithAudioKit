@@ -68,7 +68,7 @@ if (mHwAudioPlayerManager!!.offsetTime != -1L && mHwAudioPlayerManager!!.duratio
 <pre><div id="copy-button24" class="copy-btn" title="Copy" onclick="copyCode(this.id)"></div><code>
 if (mHwAudioPlayerManager != null && fromUser) {
     mHwAudioPlayerManager!!.seekTo(progress * 1000)
-}</span></code></pre>
+}<span class="pln"></span></code></pre>
 
 <p><strong>11. Locate following line in PlaylistCreator.kt </strong></p>
 <pre><div id="copy-button25" class="copy-btn" title="Copy" onclick="copyCode(this.id)"></div><code> //TODO: Retrieve local audio files<span class="pln">
@@ -112,24 +112,25 @@ playItemList.add(audioPlayItem2)<span class="pln">
 </span></code></pre>
 
 <p><strong>15. Locate following line in AudioActivity.kt</strong></p>
-<pre><div id="copy-button29" class="copy-btn" title="Copy" onclick="copyCode(this.id)"></div><code> /TODO: Implement play button<span class="pln">
+<pre><div id="copy-button29" class="copy-btn" title="Copy" onclick="copyCode(this.id)"></div><code> //TODO: Implement the play button<span class="pln">
 </span></code></pre>
-<p><strong>16. Implement play button both visually and functionally</strong></p>
+<p><strong>16. Implement the play button both visually and functionally</strong></p>
 <pre><div id="copy-button30" class="copy-btn" title="Copy" onclick="copyCode(this.id)"></div><code>
-    binding!!.playButtonImageView.setOnClickListener {
-    if (binding!!.playButtonImageView.drawable.constantState == drawablePlay!!.constantState) {
-        if (mHwAudioPlayerManager != null) {
-            mHwAudioPlayerManager!!.play()
-            binding!!.playButtonImageView.setImageDrawable(getDrawable(R.drawable.btn_playback_pause_normal))
-            isReallyPlaying = true
-        }
-    } else if (binding!!.playButtonImageView.drawable.constantState == drawablePause!!.constantState) {
-        if (mHwAudioPlayerManager != null) {
-            mHwAudioPlayerManager!!.pause()
-            binding!!.playButtonImageView.setImageDrawable(getDrawable(R.drawable.btn_playback_play_normal))
-            isReallyPlaying = false
-        }
-    }
+binding!!.playButtonImageView.setOnClickListener {
+  if (binding!!.playButtonImageView.drawable.constantState == drawablePlay!!.constantState) {
+      if (mHwAudioPlayerManager != null) {
+          mHwAudioPlayerManager!!.play()
+          binding!!.playButtonImageView.setImageDrawable(getDrawable(R.drawable.btn_playback_pause_normal))
+          isReallyPlaying = true
+      }
+  } 
+  else if (binding!!.playButtonImageView.drawable.constantState == drawablePause!!.constantState) {
+      if (mHwAudioPlayerManager != null) {
+          mHwAudioPlayerManager!!.pause()
+          binding!!.playButtonImageView.setImageDrawable(getDrawable(R.drawable.btn_playback_play_normal))
+          isReallyPlaying = false
+      }
+  }
     //Other button implementation are very similar, please check the rest of the code
     //Also, please notice that this outer method (handleOnClicks()) is called in onCreate() method
 }<span class="pln">
