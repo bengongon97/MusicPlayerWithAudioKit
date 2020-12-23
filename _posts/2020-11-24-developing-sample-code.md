@@ -70,64 +70,67 @@ if (mHwAudioPlayerManager != null && fromUser) {
     mHwAudioPlayerManager!!.seekTo(progress * 1000)
 }</span></code></pre>
 
+<p><strong>11. Locate following line in PlaylistCreator.kt </strong></p>
+<pre><div id="copy-button25" class="copy-btn" title="Copy" onclick="copyCode(this.id)"></div><code> //TODO: Retrieve local audio files<span class="pln">
+</span></code></pre>
+<p><strong>12. Retrieve local audio files that matches our criteria</strong></p>
+<pre><div id="copy-button26" class="copy-btn" title="Copy" onclick="copyCode(this.id)"></div><code>
+val songItem = HwAudioPlayItem()
+songItem.audioTitle = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.DISPLAY_NAME))
+songItem.audioId = cursor.getLong(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media._ID)).toString() + ""
+songItem.filePath = path
+songItem.setOnline(0) //0 means local
+songItem.setIsOnline(0) //0 means local
+if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+    songItem.duration = cursor.getLong(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.DURATION))
+} else songItem.setDuration(0)
+songItem.singer = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.ARTIST))
+playItemList.add(songItem)<span class="pln">
+</span></code></pre>
 
---left here---
-<p><strong>11. Locate following line in AudioActivity.kt </strong></p>
-<pre><div id="copy-button25" class="copy-btn" title="Copy" onclick="copyCode(this.id)"></div><code> //TODO: Implement the onItemClick method for video list<span class="pln">
+<p><strong>13. Locate following line in PlaylistCreator.kt</strong></p>
+<pre><div id="copy-button27" class="copy-btn" title="Copy" onclick="copyCode(this.id)"></div><code> //TODO: Retrieve an online playlist<span class="pln">
 </span></code></pre>
-<p><strong>12. Implement the onItemClick method for RecyclerView</strong></p>
-<pre><div id="copy-button26" class="copy-btn" title="Copy" onclick="copyCode(this.id)"></div><code>  currentPlayItem = myVideoList!![position]
-  //to ensure that we have the instance because normally getting the instance takes time
-  //if cannot be acquired above, it will be acquired here
-  while (player == null) {
-      initPlayer()
-      if (player != null) break
-  }
-  hasVideoEverStarted = true
-  if (player!!.isPlaying) {
-      player!!.stop()
-      isReallyPlaying = false
-  }
-  player!!.reset()
-  player!!.playSpeed = 1.0f
-  playSpeedTextView!!.setText(R.string.onePointZeroText)
-  val url = currentPlayItem!!.sources
-  player!!.setPlayUrl(url)
-  player!!.setView(surfaceView)
-  if (!dialogUtil.vodRetriever()) {
-      player!!.setVideoType(1)
-  }
-  showBufferingView()
-  player!!.ready()<span class="pln">
+<p><strong>14. Retrieve an online playlist of your selection</strong></p>
+<pre><div id="copy-button28" class="copy-btn" title="Copy" onclick="copyCode(this.id)"></div><code>
+val audioPlayItem1 = HwAudioPlayItem()
+audioPlayItem1.audioId = "1000"
+audioPlayItem1.singer = "Sample MP3 - Need lower bandwidth"
+audioPlayItem1.onlinePath = "https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3"
+//Links are examples, you may use any links you want
+//Please beware the copyright issues
+audioPlayItem1.setOnline(1)
+audioPlayItem1.audioTitle = "Kalimba - MP3"
+playItemList.add(audioPlayItem1)
+val audioPlayItem2 = HwAudioPlayItem()
+audioPlayItem2.audioId = "1001"
+audioPlayItem2.singer = "Sample FLAC - Need higher bandwidth"
+audioPlayItem2.onlinePath = "https://www.learningcontainer.com/wp-content/uploads/2020/02/Sample-FLAC-File.flac"
+audioPlayItem2.setOnline(1)
+audioPlayItem2.audioTitle = "Kalimba - FLAC"
+playItemList.add(audioPlayItem2)<span class="pln">
 </span></code></pre>
-<p><strong>13. Locate following line in AudioActivity.kt</strong></p>
-<pre><div id="copy-button27" class="copy-btn" title="Copy" onclick="copyCode(this.id)"></div><code> //TODO: Implement UI thread to keep track of the progress in seekbar<span class="pln">
-</span></code></pre>
-<p><strong>14. Implement UI thread runnable to update the progress calculations regularly</strong></p>
-<pre><div id="copy-button28" class="copy-btn" title="Copy" onclick="copyCode(this.id)"></div><code>  runOnUiThread(object : Runnable {
-      override fun run() {
-          if (player != null && isReallyPlaying) {
-              updatePlayProgressView(player!!.currentTime, player!!.bufferTime)
-          }
-          mHandler.postDelayed(this, 1000) //1 second
-      }
-  })<span class="pln">
-</span></code></pre>
+
 <p><strong>15. Locate following line in AudioActivity.kt</strong></p>
-<pre><div id="copy-button29" class="copy-btn" title="Copy" onclick="copyCode(this.id)"></div><code> //TODO: Implement ReadyListener of WisePlayer<span class="pln">
+<pre><div id="copy-button29" class="copy-btn" title="Copy" onclick="copyCode(this.id)"></div><code> /TODO: Implement play button<span class="pln">
 </span></code></pre>
-<p><strong>16. Implement ReadyListener as right after the .start() method, execution will continue from here</strong></p>
-<pre><div id="copy-button30" class="copy-btn" title="Copy" onclick="copyCode(this.id)"></div><code>  startPlaying()
-  runOnUiThread { updatePlayView(player) }<span class="pln">
-</span></code></pre>
-<p><strong>17. Locate following line in AudioActivity.kt</strong></p>
-<pre><div id="copy-button31" class="copy-btn" title="Copy" onclick="copyCode(this.id)"></div><code> //TODO: Release WisePlayer and remove callbacks<span class="pln">
-</span></code></pre>
-<p><strong>18. Release Wise Player and listeners in onDestroy() of PlayActivity.kt</strong></p>
-<pre><div id="copy-button32" class="copy-btn" title="Copy" onclick="copyCode(this.id)"></div><code>  player!!.stop()
-  player!!.release()
-  player = null
-  hasVideoEverStarted = false
-  isReallyPlaying = false
-  removeMyCallbacks()<span class="pln">
+<p><strong>16. Implement play button both visually and functionally</strong></p>
+<pre><div id="copy-button30" class="copy-btn" title="Copy" onclick="copyCode(this.id)"></div><code>
+    binding!!.playButtonImageView.setOnClickListener {
+    if (binding!!.playButtonImageView.drawable.constantState == drawablePlay!!.constantState) {
+        if (mHwAudioPlayerManager != null) {
+            mHwAudioPlayerManager!!.play()
+            binding!!.playButtonImageView.setImageDrawable(getDrawable(R.drawable.btn_playback_pause_normal))
+            isReallyPlaying = true
+        }
+    } else if (binding!!.playButtonImageView.drawable.constantState == drawablePause!!.constantState) {
+        if (mHwAudioPlayerManager != null) {
+            mHwAudioPlayerManager!!.pause()
+            binding!!.playButtonImageView.setImageDrawable(getDrawable(R.drawable.btn_playback_play_normal))
+            isReallyPlaying = false
+        }
+    }
+    //Other button implementation are very similar, please check the rest of the code
+    //Also, please notice that this outer method (handleOnClicks()) is called in onCreate() method
+}<span class="pln">
 </span></code></pre>
